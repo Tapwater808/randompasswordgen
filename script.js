@@ -1,11 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,]
-var specialChar = ["!", "\"", "#", "$", "%","\&", "\'", "(", ")", "*", "-", "_", "+", "=", ".", "/",  ":", ";", "<", ">", "?", "@", "\\", "[", "]", "^", "`", "~", "{", "}", "|"]
-var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',]
-var lowercase = [ 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -24,14 +19,26 @@ alert('generate password')
 generateBtn.addEventListener("click", writePassword);
 
 
-const random = Math.floor(Math.random() * numbers.length);
-console.log(random, numbers[random]);
+//Generator function https://net-comber.com/charset.html
 
-const random = Math.floor(Math.random() * specialChar.length);
-console.log(random, specialChar[random]);
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
 
-const random = Math.floor(Math.random() * lowercase.length);
-console.log(random, lowercase[random]);
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
 
-const random = Math.floor(Math.random() * uppercase.length);
-console.log(random, uppercase[random]);
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+
+function getRandomSymbol() {
+  const symbols = '!\"#$%\&\'(),*-_+=./:;<>?@\\[]^`~{}|'
+  return symbols[Math.floor(math.random() * symbols.length)]
+}
+
+console.log(getRandomLower());
+console.log(getRandomUpper());
+console.log(getRandomNumber());
+console.log(getRandomSymbol());
