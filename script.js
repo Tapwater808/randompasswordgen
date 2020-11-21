@@ -19,9 +19,19 @@ function generatePassword(){
   var password = '';
   var charPool = lowerletters
 
-  var includelowerletter = confirm('Should Password include Uppercase Letters')
+  var includeupperletter = confirm('Should Password include Uppercase Letters?')
   if(includeupperletter){
     charPool = charPool.concat(upperletters)
+  }
+
+  var includeNumbers = confirm('Should Password include Numbers?')
+  if(includeNumbers){
+    charPool = charPool.concat(numbers)
+  }
+
+  var includesymbols = confirm('Should Password include Special Characters?')
+  if(includesymbols){
+    charPool = charPool.concat(symbols)
   }
 
   for (let i = 0; i < passwordLength; i++)  {
