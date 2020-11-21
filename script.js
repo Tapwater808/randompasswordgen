@@ -19,6 +19,11 @@ function generatePassword(){
   var password = '';
   var charPool = lowerletters
 
+  var includelowerletter = confirm('Should Password include Uppercase Letters')
+  if(includeupperletter){
+    charPool = charPool.concat(upperletters)
+  }
+
   for (let i = 0; i < passwordLength; i++)  {
     var randomNum = Math.floor(Math.random() * charPool.length)
     password = password + charPool[randomNum];
