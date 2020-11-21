@@ -15,7 +15,16 @@ function writePassword() {
 }
 
 function generatePassword(){
-  var passwordLength =parseInt(prompt('How long should the password BeforeUnloadEvent( 8< x < 128)?'));
+  var passwordLength =parseInt(prompt('How long should the password Be? ( More than 8 less than 128 )?'));
+    if(passwordLength > 7) {
+        alert ("Please choose a number within 8 to 128.")
+      return;
+    } 
+
+    else if(passwordLength < 129) {
+      alert ("Please choose a number within 8 to 128.")
+    return;
+  } 
   var password = '';
   var charPool = lowerletters
 
